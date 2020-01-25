@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap');
+
+:root {
+    --color-gray: #4B4453;
+    --color-green-light: #C4FCEF;
+    --color-green: #00C9A7;
+    --color-red: #C34A36;
+    --color-red-dark: #662d1c;
+    --color-red-light: #FF8066;
+    --padding: 20px;
+    --width-container: 350px;
+    --radius: 5px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #00C9A7;
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    border-radius: 3px;
+    box-shadow:
+            -2px -2px 2px rgba(255, 255, 255, .1),
+            5px 5px 5px rgba(0, 0, 0, .1),
+            5px 5px 5px rgba(0, 0, 0, .1),
+            5px 5px 5px rgba(0, 0, 0, .2)
+;
+}
+
+.text-red {
+    color: var(--color-red);
+}
+
+.text-green {
+    color: var(--color-green);
+}
+
+.text-red-dark {
+    color: var(--color-red-dark);
+}
+
+.bg-red {
+    background: var(--color-red);
+}
+
+.bg-green {
+    background: var(--color-green);
+}
+
+.bg-red-dark {
+    background: var(--color-red-dark);
+}
+
+header {
+    width: var(--width-container);
+    padding: var(--padding);
+    background: var(--color-red);
+    color: #FFF;
+    display: flex;
+    font-size: 12px;
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 0;
+    padding: 0;
+    margin: 7px 0 14px 0;
+}
+
+header .side-left {
+    line-height: 0;
+    margin-right: 20px;
+}
+
+header .side-right {
+    text-align: right;
+}
+
+header .side-right span {
+    display: block;
+    font-size: 12px;
+    padding: 0 0 12px 0;
+    margin: 0;
+    line-height: 0;
+}
+
+header .side-right strong {
+    display: block;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+}
+
+main {
+    background: var(--color-green-light);
+    font-size: 18px;
+}
+
+main .legend {
+    display: flex;
+    font-size: 14px;
+    font-weight: 400;
+    justify-content: flex-end;
+    color: var(--color-gray);
+    padding: 14px;
+    border: solid 1px var(--color-red-light);
+    border-right: none;
+    border-left: none;
+    margin-bottom: 5px;
+    background: var(--color-red-light);
+}
+
+main .legend .legend-wrapper {
+    margin-left: 20px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+main .legend .square {
+    margin-right: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.content {
+    width: 100%;
+    overflow: hidden;
+}
+
+main .content {
+    position: relative;
+    height: 160px;
+    box-sizing: border-box;
+    padding: 50px var(--padding) 0 var(--padding);
+}
+
+.line-1, .line-2 {
+    position: absolute;
+}
+
+.line-1 svg polyline {
+    fill: none;
+    stroke-width: 2;
+    stroke: var(--color-red-dark);
+}
+
+.line-2 svg polyline {
+    fill: none;
+    stroke-width: 2;
+    stroke: var(--color-red);
+}
+
+
+.point {
+    position: absolute;
+    cursor: pointer;
+}
+
+.dot {
+    top: 20px;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.point .value {
+    transform: translate(-14px, -10px);
+    border-radius: 3px;
+    position: absolute;
+    padding: 8px;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .8);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.point .value::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    bottom: -4px;
+    transform: rotate(45deg);
+}
+
+.line-1 .dot, .line-1 .point .value,
+.line-1 .point .value::before {
+    background: var(--color-red-dark);
+}
+
+.line-2 .dot, .line-2 .point .value,
+.line-2 .point .value::before {
+    background: var(--color-red);
+}
+
+.line-1 .dot, .line-2 .dot{
+    z-index: 5;
+}
+
+.point .dot:hover + .value {
+    opacity: 1;
+    transition: all 1s ease;
+    transform: translate(-14px, -20px);
+    z-index: 6;
+}
+
+.line-1 .point:nth-child(1) {
+    top: 22px;
+    left: 3px;
+}
+
+.line-1 .point:nth-child(2) {
+    top: -11px;
+    left: 46px;
+}
+
+.line-1 .point:nth-child(3) {
+    top: 5px;
+    left: 85px;
+}
+
+.line-1 .point:nth-child(4) {
+    top: -13px;
+    left: 126px;
+}
+
+.line-1 .point:nth-child(5) {
+    top: 14px;
+    left: 195px;
+}
+
+.line-1 .point:nth-child(6) {
+    top: -6px;
+    left: 246px;
+}
+
+.line-1 .point:nth-child(7) {
+    top: -13px;
+    left: 295px;
+}
+
+.line-2 .point:nth-child(1) {
+    top: -4px;
+    left: 3px;
+}
+
+.line-2 .point:nth-child(2) {
+    top: -18px;
+    left: 46px;
+}
+
+.line-2 .point:nth-child(3) {
+    top: -5px;
+    left: 85px;
+}
+
+.line-2 .point:nth-child(4) {
+    top: -22px;
+    left: 126px;
+}
+
+.line-2 .point:nth-child(5) {
+    top: 24px;
+    left: 195px;
+}
+
+.line-2 .point:nth-child(6) {
+    top: 6px;
+    left: 246px;
+}
+
+.line-2 .point:nth-child(7) {
+    top: 20px;
+    left: 295px;
+}
+
+.week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    color: var(--color-red-light);
+    font-size: 12px;
+}
+
+.week .day {
+    height: 85px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
