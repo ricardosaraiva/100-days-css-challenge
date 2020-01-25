@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap');
+
+:root {
+    --color-green: #9EE493;
+    --color-green-light: #DAF7DC;
+    --color-blue: #ABC8C0;
+    --color-purple-light: #cea6cb;
+    --color-purple: #42273B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(45deg, var(--color-green), var(--color-purple-light));
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    border-radius: 5px;
+    background: var(--color-purple-light);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, .1),
+                5px 5px 5px rgba(0, 0, 0, .2);
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.container .side-left {
+    padding: 50px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-purple);
+}
+
+.container .side-left .profile-image img {
+    position: relative;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    background: red;
+    z-index: 2;
+}
+
+.container .side-left .profile-image a:hover > .circle-1 {
+    transition: all 1s ease;
+    transform: rotate(720deg);
+    opacity: .7;
+}
+
+.container .side-left .profile-image a:hover > .circle-2 {
+    transition: all 1s ease;
+    transform: rotate(-720deg);
+}
+
+.container .side-left .circle-1 {
+    transition: all 1s ease;
+    border: solid 1px var(--color-purple);
+    border-left-color: transparent;
+    height: 115px;
+    width: 115px;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: -7px;
+    margin-top: -7px;
+    z-index: 1;
+}
+
+.container .side-left .circle-2 {
+    transition: all 1s ease;
+    border: solid 1px var(--color-purple);
+    border-right-color: transparent;
+    height: 125px;
+    width: 125px;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: -12px;
+    margin-top: -12px;
+    z-index: 1;
+}
+
+.container .side-left h1.profile-name {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.container .side-left h4.profile-type {
+    font-size: 12px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.container .side-left .links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--color-purple);
+    text-decoration: none;
+    border: solid 1px var(--color-purple);
+    padding: 8px 30px;
+    margin: 10px 0;
+    border-radius: 20px;
+    width: 220px;
+    text-align: center;
+    font-weight: 700;
+    transition: all .5s ease;
+}
+
+.container .side-left .links a:hover {
+    background: var(--color-purple);
+    color: var(--color-purple-light);
+}
+
+.container .side-right a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2px;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    background: var(--color-purple);
+    color: #FFF;
+    text-decoration: none;
+    font-size: 12px;
+    transition: all .5s ease;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    line-height: 0;
+}
+
+.container .side-right a b {
+    display: block;
+    font-size: 22px;
+    padding-bottom: 20px;
+}
+
+.container .side-right a:hover {
+    opacity: 0.8;
+}
+
+.container .side-right a:last-child {
+    margin-bottom: 0;
+}
