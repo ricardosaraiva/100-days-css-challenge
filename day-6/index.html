@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Day 5</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav id="menu">
+        <ul>
+          <li>
+            <a href="#">
+              <span class="fas fa-chart-bar"></span>
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="fas fa-user"></span>
+              Profile
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="fas fa-bell"></span>
+              Notifications
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="fas fa-comment"></span>
+              Messages
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="fas fa-cog"></span>
+              Settings
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="container" id="container">
+          <header>
+              <button id="menuBar">
+                  <span class="fas fa-bars"></span>
+              </button>
+              <h1>
+                Notifications
+              </h1>
+              <div class="search">
+                  <input type="text" id="inputSearch" placeholder="Search...">
+                  <button id="buttonSearch">
+                      <span class="fas fa-search"></span>
+                  </button>
+              </div>
+          </header>
+          <main>
+              <div class="line"></div>
+              <ul>
+                  <li>
+                      <a href="#">
+                          <time>9:24 AM</time>
+                          <b>John Walker</b> posted a photo on your wall.
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#">
+                          <time>8:10 AM</time>
+                          <b>Alice Parker</b> commented your last post.
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#">
+                          <time>Yesterday</time>
+                          <b>Luke Wayne</b> added you as friend.
+                      </a>
+                  </li>
+              </ul>
+          </main>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
