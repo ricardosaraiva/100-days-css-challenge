@@ -1,0 +1,107 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,400,300,100);
+
+:root {
+    --color-blue: #5D8EDF;
+    --color-blue-dark: #2e466e;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--color-blue);
+    color: #FFF;
+    padding: 30px;
+    font-size: 24px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+.container .text {
+    position: relative;
+}
+
+.container:after {
+    content: '„';
+    font-family: Arial, sans-serif;
+    font-size: 330px;
+    position: absolute;
+    top: -170px;
+    left: 0;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.info {
+    display: inline;
+}
+
+.info button {
+    background: var(--color-blue-dark);
+    padding: 0 10px;
+    border: none;
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 400;
+    outline: none;
+    cursor: pointer;
+}
+
+.info .tooltip {
+    opacity: 0;
+    transition: all .5s ease-in-out;
+    position: absolute;
+    z-index: -1;
+    background: var(--color-blue-dark);
+    top: -100px;
+    font-size: 18px;
+}
+
+.info .tooltip:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: var(--color-blue-dark);
+    position: absolute;
+    transform: rotate(45deg);
+    left: 50%;
+    margin-top: -6px;
+    margin-left: -10px;
+}
+
+.info .tooltip .title {
+    background: #FFF;
+    padding: 10px;
+    color: var(--color-blue-dark);
+}
+
+.info .tooltip .content {
+    padding: 10px;
+}
+
+.info:hover > .tooltip{
+    top: -80px;
+    opacity: 1;
+    transform: scale(1);
+    z-index: 10;
+}
+
+.author {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 100;
+}
